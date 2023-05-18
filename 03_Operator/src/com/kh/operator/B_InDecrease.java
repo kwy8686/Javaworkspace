@@ -29,7 +29,7 @@ public class B_InDecrease {
 		int number = 10;
 		
 		// 전위 연산자
-		System.out.println("전위 연사자 적용 전 : " + number); //10
+		System.out.println("전위 연산자 적용 전 : " + number); //10
 		System.out.println("1회 수행 후 값 : " + ++number); //11 number = number + 1
 		System.out.println("2회 수행 후 값 : " + ++number); //12
 		System.out.println("전위 연산자 적용 후 : " + number); //12

@@ -44,8 +44,9 @@ public class OperatorPractice {
 		System.out.print("양수를 입력해주세요 : ");
 		i = sc.nextInt();
 		
-		int num1 = i / 100;
-		System.out.println(num1 + "00");
+		int num1 = i % 100;
+		int num2 = i - num1;
+		System.out.println(num2);
 		
 		
 	}
@@ -67,7 +68,7 @@ public class OperatorPractice {
 		System.out.print("입력3 : ");
 		num3 = sc.nextInt();
 		
-		boolean result = ((num1 == num2) && (num2 == num3)) ? true : false;
+		boolean result = ((num1 == num2) && (num2 == num3));
 		System.out.println(result);
 	}
 	
@@ -107,6 +108,7 @@ public class OperatorPractice {
 		int num1 = 0;
 		int num2 = 0;
 		int num3 = 0;
+		int result = 0;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -116,8 +118,10 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		num2 = sc.nextInt();
 		
-		num3 = ((num1 % num2) != 0) ? num1 / num2 + 1 : num1 / num2;
-		System.out.println(num3);
+		num3 = num1 / num2;
+		
+		result = (num3 == 0) ? num3 + 1 : num3;
+		System.out.println(result);
 		
 	}
 	
