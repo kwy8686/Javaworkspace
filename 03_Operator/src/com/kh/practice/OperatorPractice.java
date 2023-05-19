@@ -12,7 +12,7 @@ public class OperatorPractice {
 //		op.method3();
 //		op.method4();
 //		op.method5();
-		op.method6();
+//		op.method6();
 	}
 	
 	public void method1() {
