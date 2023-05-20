@@ -127,21 +127,19 @@ public class ConditionPractice {
     	System.out.print("영어점수 : ");
     	y = sc.nextInt();
     	
-    	result1 = i + x + y;
-    	result2 = (float) result1 / 3;
+    	result1 = (i + x + y);
+    	result2 = (float) result1/ 3;
     	
-    	if(result1 >= 40) {
-    		if(result2 >= 60) {
-    			System.out.println("국어 : " + i);
-    			System.out.println("수학 : " + x);
-    			System.out.println("영어 : " + y);
-    			System.out.println(result1);
-    			System.out.printf("%.1f\n", result2);
-    			System.out.println("축하합니다. 합격입니다!");
+    	if(i >= 40 && x >= 40 && y >= 40 && result2 >= 60) {
+			System.out.println("국어 : " + i);
+			System.out.println("수학 : " + x);
+			System.out.println("영어 : " + y);
+			System.out.println("합계 : " + result1);
+			System.out.printf("평균 : %.1f\n", result2);
+			System.out.println("축하합니다. 합격입니다!");
     		} else {
     			System.out.println("불합격입니다.");
     		}
-    	}
     }
 
     /*
@@ -158,11 +156,11 @@ public class ConditionPractice {
     	System.out.print("구매한 옷 가격 : ");
     	i = sc.nextInt();
     	
-    	if(i > 500000) {
+    	if(i >= 500000) {
     		System.out.println((int) (i - (i * 0.2)));
-    	} else if(i > 300000) {
+    	} else if(i >= 300000) {
     		System.out.println((int) (i - (i * 0.1)));
-    	} else if (i > 100000) {
+    	} else if (i >= 100000) {
     		System.out.println((int) (i - (i * 0.05)));
     	} else {
     		System.out.println(i);
@@ -295,19 +293,19 @@ public class ConditionPractice {
     	
     	int i = 0;
     	int x = 0;
-    	char str = '\u0000';
+    	char ch = '\u0000';
     	
     	System.out.print("첫번째 양수 입력 : ");
     	i = sc.nextInt();
     	
     	System.out.print("두번째 양수 입력 : ");
     	x = sc.nextInt();
-    	
-    	System.out.print("연산자 입력 : ");
-    	str = sc.nextLine().charAt(0);
     	sc.nextLine();
     	
-    	switch(str) {
+    	System.out.print("연산자 입력 : ");
+    	ch = sc.nextLine().charAt(0);
+    	
+    	switch(ch) {
     	case '+' :
     		System.out.println(i + " + " + x + " = " + (i + x));
     		break;
@@ -441,16 +439,28 @@ public class ConditionPractice {
     	float score1 = (float) (input1 * 0.2);
     	float score2 = (float) (input2 * 0.3);
     	float score3 = (float) (input3 * 0.3);
-    	float score4 = (float) (input4 * 0.2);
+    	float score4 = (float) input4;
     	float result = score1 + score2 + score3 + score4;
     	
-    	if(result > 70) {
-//    		if(input4 > )
-    	}
-    	
     	System.out.println("===========결과==========");
-    	
-    	
+    	if(input4 >= 14) {
+    		if(result >= 70) {
+    			System.out.println("중간 고사 점수(20) : " + score1);
+    			System.out.println("기말 고사 점수(30) : " + score2);
+    			System.out.println("과제 점수 (30) : " + score3);
+    			System.out.println("출석 점수 (20) : " + score4);
+    			System.out.printf("총점 : %.1f\n", result);
+    			System.out.println("PASS");
+    		} else {
+    			System.out.printf("FAIL [점수 미달] (총점 : %.1f)", result);
+    		}
+    	} else {
+    		System.out.printf("FAIL [출석 횟수 부족] (%d/20)\n", input4);
+    		if(result >= 70) {
+    		} else {
+    			System.out.printf("FAIL [점수 미달] (총점 : %.1f)", result);
+    		}
+    	}
     }
     
     public static void main(String[] args) {
@@ -463,11 +473,9 @@ public class ConditionPractice {
 //    	d.practice6();
 //    	d.practice7();
 //    	d.practice8();
-    	d.practice9();
+//    	d.practice9();
 //    	d.practice10();
-//    	d.practice11();
-    	
-    	
+    	d.practice11();
     }
     
 }
