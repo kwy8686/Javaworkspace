@@ -1,6 +1,10 @@
 package com.kh.loop;
 
+import java.util.Scanner;
+
 class LoopPractice {
+	
+	Scanner sc = new Scanner(System.in);
  
     /*
         사용자로부터 숫자(1~100) 1개가 입력되었을 때 카운트다운 출력하시오.
@@ -12,12 +16,43 @@ class LoopPractice {
         1
      */
     public void method1() {
+    	
+    	int input = 0;
+    	
+    	System.out.print("사용자 입력 : ");
+    	input = sc.nextInt();
+    	
+    	for(int i = input; i >= 1; i--) {
+    		System.out.println(i);
+    	}
 
     }
 
     // 1+(-2)+3+(-4)+...과 같은 식으로 계속 더해나갔을 때, 몇까지 더해야 총합이 100 이상 되는지 출력하시오.
     public void method2() {
-
+    	
+    	int num1 = 1;
+    	int num2 = -2;
+    	int num3 = num1 + num2;
+    	
+    	while(num3 < 100) {
+    		
+    		if(num1 < num2 * -1) {
+    		System.out.print(num1);
+    		num1 += 2; 
+    		num3 += num1;
+    		} else {
+			System.out.print("(" + num2 + ")");	
+			num2 -= 2;
+			num3 += num2;
+    		}
+    		
+    		if(num3 < 100) {
+    			System.out.print("+");	
+    		}
+    	}
+    	System.out.println();
+    	System.out.println("총합 : " + num3);
     }
 
     /*
@@ -29,7 +64,21 @@ class LoopPractice {
 
     */
     public void method3() {
-
+    	
+    	System.out.print("문자열 : ");
+    	String i = sc.nextLine();
+    	
+    	System.out.print("문자 : ");
+    	char x = sc.next().charAt(0);
+    	
+    	int result = 0;
+    	
+    	for(int num = 0; num < i.length(); num++) {
+    		if(x == i.charAt(num)) {
+    			result++;
+    		}
+    	}
+    	System.out.println(i + " 안에 포함된 " + x + " 개수 : " + result);
     }
 
     /*
@@ -43,7 +92,16 @@ class LoopPractice {
         0
      */
     public void method4() {
-
+    	
+    	double random = Math.random() * 10;
+    	random = (int) random;
+    	
+    	while(random != 0) {
+    		System.out.printf("%.0f\n", random);
+    		random = Math.random() * 10;
+    		random = (int) random;
+    	}
+    	System.out.printf("%.0f", random);
     }
 
     /*
@@ -58,7 +116,45 @@ class LoopPractice {
 
      */
     public void method5() {
-
+    	
+    	int num1 = 0;
+    	int num2 = 0;
+    	int num3 = 0;
+    	int num4 = 0;
+    	int num5 = 0;
+    	int num6 = 0;
+    	
+    	for(int i = 0; i < 10; i++) {
+    	
+		double random = Math.random() * 5 + 1;
+    		
+    		switch((int) random) {
+    		case 1:
+    			num1++;
+    			break;
+    		case 2:
+    			num2++;
+    			break;
+    		case 3:
+    			num3++;
+    			break;
+    		case 4:
+    			num4++;
+    			break;
+    		case 5:
+    			num5++;
+    			break;
+    		case 6:
+    			num6++;
+    			break;
+    		}
+    	}
+    	System.out.println("1 : " + num1);
+    	System.out.println("2 : " + num2);
+    	System.out.println("3 : " + num3);
+    	System.out.println("4 : " + num4);
+    	System.out.println("5 : " + num5);
+    	System.out.println("6 : " + num6);
     }
 
     /*
@@ -84,7 +180,34 @@ class LoopPractice {
         이겼습니다 !
     */
     public void method6() {
+    	
+    	String n1 = "가위";
+    	String n2 = "바위";
+    	String n3 = "보";
+    	
+    	System.out.print("당신의 이름을 입력해주세요 : ");
+    	String name = sc.nextLine();
+    	
+    	System.out.print("가위바위보 : ");
+    	String n4 = sc.nextLine();
+    	
+    	while() {
+    		double random = Math.random() * 2 + 1;
+    		if((int) random == 1) {
+    			
+    		}
+    	}
 
+    }
+    
+    public static void main(String[] args) {
+    	LoopPractice e = new LoopPractice();
+//    	e.method1();
+//    	e.method2();
+//    	e.method3();
+//    	e.method4();
+//    	e.method5();
+//    	e.method6();
     }
 
 }
