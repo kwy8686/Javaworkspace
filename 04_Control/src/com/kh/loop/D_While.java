@@ -130,6 +130,90 @@ public class D_While {
 			System.out.println(i + "번 만에 맞췄습니다.");	
 		}
 	}
+	//method5 선생님 풀이
+	public void method6() {
+		
+		int answer = (int)Math.random() * 100 + 1;
+		int input = 0;
+		int count = 0;
+		
+		while(true) {
+			count++;
+			System.out.println("1과 100사이의 값 입력 > ");
+			input = sc.nextInt();
+			
+			if(answer > input) {
+				System.out.println("더 큰 수를 입력하세요.");
+			} else if(answer < input) {
+				System.out.println("더 작은 수를 입력하세요.");
+			} else {
+				System.out.println(count + "번 만에 맞췄습니다.");
+				break;
+			}
+		}
+	}
+	
+	/*
+	 * ---------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ---------------------------------
+	 * 선택 > 1
+	 * 예금액 > 5000
+	 * 
+	 * ---------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ---------------------------------
+	 * 선택 > 2
+	 * 출금액 > 2000
+	 * 
+	 * ---------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ---------------------------------
+	 * 선택 > 3
+	 * 잔고 > 3000
+	 * 
+	 * ---------------------------------
+	 * 1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * ---------------------------------
+	 * 선택 > 4
+	 * 프로그램 종료
+	 * 
+	 */
+	public void method7() {
+		
+		int balance = 0;
+		boolean run = true;
+		
+		while(run) {
+			System.out.println("---------------------------------");
+			System.out.println("1. 예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println("---------------------------------");
+			
+			System.out.print("선택 > ");
+			// Interger.parseInt : Integer 클래스의 parseInt 메소드
+			// String -> int
+			int menu = Integer.parseInt(sc.nextLine());
+			
+			switch(menu) {
+			case 1:
+				System.out.print("예금액 > ");
+				balance += Integer.parseInt(sc.nextLine());
+				break;
+			case 2:
+				System.out.print("출금액 > ");
+				balance -= Integer.parseInt(sc.nextLine());
+				break;
+			case 3:
+				System.out.print("잔고 > ");
+				System.out.println(balance);
+				break;
+			case 4:
+				run = false;
+				break;
+			}
+		}
+		System.out.println("프로그램 종료");
+	}
 
 	public static void main(String[] args) {
 		D_While d = new D_While();
@@ -137,7 +221,9 @@ public class D_While {
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
+//		d.method5();
+//		d.method6();
+		d.method7();
 	}
 
 }

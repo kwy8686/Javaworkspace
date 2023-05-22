@@ -181,24 +181,96 @@ class LoopPractice {
     */
     public void method6() {
     	
-    	String n1 = "가위";
-    	String n2 = "바위";
-    	String n3 = "보";
+    	int lose = 0;
+    	int draw = 0;
+    	int win = 0;
     	
     	System.out.print("당신의 이름을 입력해주세요 : ");
     	String name = sc.nextLine();
     	
-    	System.out.print("가위바위보 : ");
-    	String n4 = sc.nextLine();
+    	String computer = null;
     	
-    	while() {
-    		double random = Math.random() * 2 + 1;
-    		if((int) random == 1) {
-    			
+    	boolean run = true;
+    	
+    	while(run) {
+    		
+    		System.out.print("가위바위보 : ");
+        	String input = sc.nextLine();
+    		
+    		int random = (int) (Math.random() * 3) + 1;
+    		if(random == 1) {
+    			computer = "가위";
+    		} else if(random == 2) {
+    			computer = "바위";
+    		} else {
+    			computer = "보";
+    		}
+    		
+    		switch(input) {
+    		case "가위":
+    			if(computer == "가위") {
+    				System.out.println("컴퓨터 : 가위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("비겼습니다");
+    				draw++;
+    			} else if(computer == "바위") {
+    				System.out.println("컴퓨터 : 바위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("졌습니다ㅠㅠ");
+    				lose++;
+    			} else {
+    				System.out.println("컴퓨터 : 보");
+    				System.out.println(name + " : " + input);
+    				System.out.println("이겼습니다!");
+    				win++;
+    				run = false;
+    				break;
+    			}
+			case "바위":
+				if(computer == "가위") {
+    				System.out.println("컴퓨터 : 가위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("이겼습니다!");
+    				win++;
+    				run = false;
+    				break;
+    			} else if(computer == "바위") {
+    				System.out.println("컴퓨터 : 바위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("비겼습니다");
+    				draw++;
+    			} else {
+    				System.out.println("컴퓨터 : 보");
+    				System.out.println(name + " : " + input);
+    				System.out.println("졌습니다ㅠㅠ");
+    				lose++;
+    			}
+			case "보":
+				if(computer == "가위") {
+    				System.out.println("컴퓨터 : 가위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("졌습니다ㅠㅠ");
+    				lose++;
+    			} else if(computer == "바위") {
+    				System.out.println("컴퓨터 : 바위");
+    				System.out.println(name + " : " + input);
+    				System.out.println("이겼습니다!");
+    				win++;
+    				run = false;
+    				break;
+    			} else {
+    				System.out.println("컴퓨터 : 보");
+    				System.out.println(name + " : " + input);
+    				System.out.println("비겼습니다");
+    				draw++;
+    			}
     		}
     	}
-
+    	System.out.println("이긴 횟수 : " + win);
+    	System.out.println("진 횟수 : " + lose);
+    	System.out.println("비긴 횟수 : " + draw);
     }
+
     
     public static void main(String[] args) {
     	LoopPractice e = new LoopPractice();
@@ -207,7 +279,7 @@ class LoopPractice {
 //    	e.method3();
 //    	e.method4();
 //    	e.method5();
-//    	e.method6();
+    	e.method6();
     }
 
 }
