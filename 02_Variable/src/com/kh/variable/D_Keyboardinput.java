@@ -45,8 +45,6 @@ public class D_Keyboardinput {
 		
 		System.out.println("당신의 이름은 " + name + "이고 사는 곳은 " + addr + ", 나이는 " + age + "세, 키는 " + height + "cm, 성별은 " + gender + "입니다.");
 		
-		System.out.printf("%s%s%s%s%s%d%s%.1f%s%s%s\n", "당신의 이름은 ", name, "이고 사는 곳은 ", addr, ", 나이는 ", age, "세, 키는 ", height, "cm, 성별은 ", gender, "입니다.");
-		
 		System.out.printf("당신의 이름은 %s이고 사는 곳은 %s, 나이는 %d세, 키는 %.1fcm, 성별은 %s입니다.", name, addr, age, height, gender);
 		
 	}

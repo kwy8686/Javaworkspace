@@ -120,8 +120,8 @@ public class ArrayPractice {
 	public static void main(String[] args) {
 		ArrayPractice array = new ArrayPractice();
 //		array.method1();
-//		array.method2();
-		array.method3();
+		array.method2();
+//		array.method3();
 //		array.method4();
 //		array.method5();
 		
