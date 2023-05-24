@@ -95,15 +95,22 @@ public class ArrayPractice {
 	 * */
 	public void method4() {
 		
-		int[] num = new int[14];
 		System.out.print("주민등록번호 : ");
-		int input = Integer.parseInt(sc.nextLine());
+		String input = sc.nextLine();
 		
-		for(int i = 0; i < num.length; i++) {
-			num[i] = input[i];
-			System.out.print(input[i]);
+		char[] input2 = new char[input.length()];
+		
+		for(int i = 0; i < input.length(); i++) { // 이렇게
+			input2[i] = input.charAt(i);
 		}
 		
+		for(int i = 0; i < input.length(); i++) { // 조건식이 같다면 하나로 합치는 게 좋아요!
+			if(i < 8) {
+			System.out.print(input2[i]);
+			} else {
+				System.out.print("*");
+			}
+		}
 	}
 	
 	/*
@@ -115,15 +122,28 @@ public class ArrayPractice {
 	 * */
 	public void method5() {
 		
+		System.out.print("단어 입력 : ");
+		String input = sc.nextLine();
+		
+		char[] input2 = new char[input.length()];
+		
+		for(int i = input.length()-1; i >= 0; i--) { 
+			input2[i] = input.charAt(i);
+			System.out.print(input2[i]);
+		}
+		
+		for(int i = input.length()-1; i >= 0; i--) { // 여기 for문 생략해도 답이 나올거에요!
+			System.out.print(input2[i]);
+		}
 	}
 	
 	public static void main(String[] args) {
 		ArrayPractice array = new ArrayPractice();
-//		array.method1();
+		array.method1();
 		array.method2();
-//		array.method3();
-//		array.method4();
-//		array.method5();
+		array.method3();
+		array.method4();
+		array.method5();
 		
 		
 	}

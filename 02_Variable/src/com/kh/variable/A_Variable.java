@@ -114,7 +114,7 @@ public class A_Variable {
 		int maxNumber;
 	}
 	
-	public void constant( ) {
+	public void constant() {
 		/*
 		 * 상수
 		 * 

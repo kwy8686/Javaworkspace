@@ -35,7 +35,8 @@ class LoopPractice {
     	int num2 = -2;
     	int num3 = num1 + num2;
     	
-    	while(num3 < 100) {
+    	while(num3 < 100) { 
+    		// 100 이상이 되었을 때 멈춰야 해요! 출력되는 값은 100 이상일 때 해당하는 값! 변수 2개보다 1개로 사용하셔야 로직이 그려질거에요
     		
     		if(num1 < num2 * -1) {
     		System.out.print(num1);
@@ -93,7 +94,7 @@ class LoopPractice {
      */
     public void method4() {
     	
-    	double random = Math.random() * 10;
+    	double random = Math.random() * 10; // 지금 코드상 범위는 0~9까지입니다! 0 포함 0~10으로 변경!
     	random = (int) random;
     	
     	while(random != 0) {
@@ -126,7 +127,7 @@ class LoopPractice {
     	
     	for(int i = 0; i < 10; i++) {
     	
-		double random = Math.random() * 5 + 1;
+		double random = Math.random() * 5 + 1; // 여기도 범위가! 현재 코드로는 1~5까지에요! 주사위니까 1~6으로 변경 부탁드릴게요!
     		
     		switch((int) random) {
     		case 1:
@@ -191,8 +192,9 @@ class LoopPractice {
     	String computer = null;
     	
     	boolean run = true;
+    	boolean playerwin = false;
     	
-    	while(run) {
+    	while(run && !playerwin) {
     		
     		System.out.print("가위바위보 : ");
         	String input = sc.nextLine();
@@ -208,12 +210,12 @@ class LoopPractice {
     		
     		switch(input) {
     		case "가위":
-    			if(computer == "가위") {
+    			if(computer.equals("가위")) {
     				System.out.println("컴퓨터 : 가위");
     				System.out.println(name + " : " + input);
     				System.out.println("비겼습니다");
     				draw++;
-    			} else if(computer == "바위") {
+    			} else if(computer.equals("바위")) {
     				System.out.println("컴퓨터 : 바위");
     				System.out.println(name + " : " + input);
     				System.out.println("졌습니다ㅠㅠ");
@@ -223,18 +225,17 @@ class LoopPractice {
     				System.out.println(name + " : " + input);
     				System.out.println("이겼습니다!");
     				win++;
-    				run = false;
-    				break;
+    				playerwin = true;
     			}
+    			break;
 			case "바위":
-				if(computer == "가위") {
+				if(computer.equals("가위")) {
     				System.out.println("컴퓨터 : 가위");
     				System.out.println(name + " : " + input);
     				System.out.println("이겼습니다!");
     				win++;
-    				run = false;
-    				break;
-    			} else if(computer == "바위") {
+    				playerwin = true;
+    			} else if(computer.equals("바위")) {
     				System.out.println("컴퓨터 : 바위");
     				System.out.println(name + " : " + input);
     				System.out.println("비겼습니다");
@@ -245,25 +246,26 @@ class LoopPractice {
     				System.out.println("졌습니다ㅠㅠ");
     				lose++;
     			}
+				break;
 			case "보":
-				if(computer == "가위") {
+				if(computer.equals("보")) {
     				System.out.println("컴퓨터 : 가위");
     				System.out.println(name + " : " + input);
     				System.out.println("졌습니다ㅠㅠ");
     				lose++;
-    			} else if(computer == "바위") {
+    			} else if(computer.equals("보")) {
     				System.out.println("컴퓨터 : 바위");
     				System.out.println(name + " : " + input);
     				System.out.println("이겼습니다!");
     				win++;
-    				run = false;
-    				break;
+    				playerwin = true;
     			} else {
     				System.out.println("컴퓨터 : 보");
     				System.out.println(name + " : " + input);
     				System.out.println("비겼습니다");
     				draw++;
     			}
+				break;
     		}
     	}
     	System.out.println("이긴 횟수 : " + win);
